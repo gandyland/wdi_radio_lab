@@ -5,15 +5,13 @@ angular
 .module("songs")
 .controller("SongsIndexController", [
   "$firebaseArray",
-  "$firebaseObject",
+
   ControllerFunction
 ])
-function ControllerFunction($firebaseArray, $firebaseObject){
+function ControllerFunction($firebaseArray){
   var vm = this;
   var ref = firebase.database().ref().child("songs");
-  $firebaseArray(ref).$loaded().then(function(songs){
-    vm.songs = songs;
-  })
+    vm.songs = $firebaseArray(ref);
 
   vm.play = function(song){
     vm.playSong = song;

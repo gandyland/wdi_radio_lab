@@ -2,9 +2,8 @@
 
 (function(){
  angular
-   .module("songs", [
+   .module("radio", [
      "ui.router",
-     "firebase",
      "songs"
    ])
    .config([
@@ -15,14 +14,14 @@
    function RouterFunction($stateProvider){
      $stateProvider
        .state("Welcome", {
-         url: "",
+         url: "/",
          templateUrl: "js/greetings.html"
        })
-       .state("songs", {
+       .state("songsIndex", {
          url: "/songs",
          templateUrl: "js/songs/index.html",
          controller: "SongsIndexController",
-         controllerAs: "SongsIndexViewModel"
+         controllerAs: "SongIndexVM"
        })
    }
 }());

@@ -1,6 +1,6 @@
 "use strict";
 
 (function(){
-  angular
-    .module("songs", []);
+angular
+  .module("songs", ["firebase"]);
 })();
