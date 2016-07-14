@@ -2,7 +2,7 @@
 
 (function(){
   angular
-    .module("wdiRadio", [
+    .module("songs", [
       "ui.router",
       "firebase",
       "songs"
