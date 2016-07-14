@@ -14,6 +14,11 @@
     $firebaseArray(ref).$loaded().then(function(songs){
       vm.songs = songs;
     })
+    
+    vm.play = function(song){
+      vm.playSong = song;
+      vm.playSong.encodedUrl = $sce.trustAsResourceUrl(song.audio_url);
+    }
   }
 
 })();
